@@ -55,32 +55,48 @@ public class Movimiento : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(up){
-            MovInd = 3;
+        if (MovInd != 2)
+        {
+            if (up)
+            {
+                MovInd = 3;
+            }
         }
-        if(down){
-            MovInd = 2;
+        if (MovInd != 3)
+        {
+            if (down)
+            {
+                MovInd = 2;
+            }
         }
-        if(left){
-            MovInd = 1;
+        if (MovInd != 0)
+        {
+            if (left)
+            {
+                MovInd = 1;
+            }
         }
-        if(right){
-            MovInd = 0;
+        if (MovInd != 1)
+        {
+            if (right)
+            {
+                MovInd = 0;
+            }
         }
 
 
         if (MovInd == 0)
             gameObject.transform.Translate(1f * Time.deltaTime, 0, 0);
-            left = false;
+
         if (MovInd == 1)
             gameObject.transform.Translate(-1f * Time.deltaTime, 0, 0);
-            right = false;
+
         if (MovInd == 2)
             gameObject.transform.Translate(0, -1f * Time.deltaTime, 0);
-            up = false;
+
         if (MovInd == 3)
             gameObject.transform.Translate(0, 1f * Time.deltaTime, 0);
-            down = false;
+
 
     }
 
